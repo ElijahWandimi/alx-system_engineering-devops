@@ -1,0 +1,16 @@
+#!/bin/bash
+
+# Function to list files in long format
+function list_files_long_format() {
+  ls -la "$1"
+}
+
+# Get the absolute paths of current directory, its parent, and /boot directory
+current_dir=$(pwd)
+parent_dir=$(dirname "$current_dir")
+boot_dir="/boot"
+
+# List files in long format for the specified directories
+list_files_long_format "$current_dir"
+list_files_long_format "$parent_dir"
+list_files_long_format "$boot_dir"
